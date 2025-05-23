@@ -5,7 +5,7 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap'); */
 
-body {
+/* body {
   font-family: 'Manrope', sans-serif;
   @apply bg-grayscale-800 p-4 font-manrope text-white;
 
@@ -18,4 +18,23 @@ button {
 
 input[type='text'] {
   @apply rounded-md border-2 border-grayscale-700 bg-grayscale-700 px-2 py-1 text-white shadow-lg outline-none  focus:border-primary-500;
+} */
+
+:root {
+  --color-primary: #1a202c;
+  --color-secondary: #4a5568;
+  --color-muted: #718096;
+  --color-error: #e53e3e;
+  --color-success: #38a169;
+  --color-warning: #dd6b20;
 }
+
+/* Optional base reset */
+.typography {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: color 0.2s ease;
+}
+

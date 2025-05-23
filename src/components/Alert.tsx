@@ -1,39 +1,48 @@
 import React from 'react';
-import { ExclamationCircleIcon, CheckCircleIcon, InformationCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/solid';
+import { cn } from '@/lib/utils';
 
-type AlertType = 'info' | 'success' | 'warning' | 'error';
+type AlertVariant = 'info' | 'success' | 'warning' | 'error';
 
-interface AlertProps {
-  type: AlertType;
+export interface AlertProps {
   title: string;
   message?: string;
+  variant?: AlertVariant;
   className?: string;
 }
 
-const iconMap: Record<AlertType, React.ReactNode> = {
-  info: <InformationCircleIcon className="h-5 w-5 text-blue-500" />,
-  success: <CheckCircleIcon className="h-5 w-5 text-green-500" />,
-  warning: <ExclamationTriangleIcon className="h-5 w-5 text-yellow-500" />,
-  error: <ExclamationCircleIcon className="h-5 w-5 text-red-500" />,
+const variantStyles: Record<AlertVariant, string> = {
+  info: 'bg-blue-100 text-blue-800 border-blue-300',
+  success: 'bg-green-100 text-green-800 border-green-300',
+  warning: 'bg-yellow-100 text-yellow-800 border-yellow-300',
+  error: 'bg-red-100 text-red-800 border-red-300',
 };
 
-const bgMap: Record<AlertType, string> = {
-  info: 'bg-blue-50 border-blue-200',
-  success: 'bg-green-50 border-green-200',
-  warning: 'bg-yellow-50 border-yellow-200',
-  error: 'bg-red-50 border-red-200',
+const iconMap: Record<AlertVariant, string> = {
+  info: 'ℹ️',
+  success: '✅',
+  warning: '⚠️',
+  error: '❌',
 };
 
-export const Alert: React.FC<AlertProps> = ({ type, title, message, className = '' }) => {
+export const Alert: React.FC<AlertProps> = ({
+  title,
+  message,
+  variant = 'info',
+  className,
+}) => {
   return (
     <div
-      className={`flex items-start gap-3 rounded border p-4 font-manrope text-sm shadow-sm ${bgMap[type]} ${className}`}
       role="alert"
+      className={cn(
+        'w-full rounded-md border px-4 py-3 flex items-start space-x-3',
+        variantStyles[variant],
+        className
+      )}
     >
-      <div className="shrink-0">{iconMap[type]}</div>
-      <div>
-        <p className="font-medium text-grayscale-900">{title}</p>
-        {message && <p className="text-grayscale-700">{message}</p>}
+      <div className="text-xl">{iconMap[variant]}</div>
+      <div className="flex-1">
+        <p className="font-semibold">{title}</p>
+        {message && <p className="text-sm mt-1">{message}</p>}
       </div>
     </div>
   );
