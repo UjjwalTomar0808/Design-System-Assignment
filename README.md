@@ -18,7 +18,8 @@ To get started with this project, clone the repository and install the dependenc
 ```bash
 git clone https://github.com/ujjwaltomar0808/ujjwaltomar0808-design-system-assignment.git
 cd ujjwaltomar0808-design-system-assignment
-npm install```
+npm install
+```````
 
 
 ## Usage
