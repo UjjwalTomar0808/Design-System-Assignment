@@ -21,7 +21,7 @@ cd ujjwaltomar0808-design-system-assignment
 npm install
 
 
-Usage
+## Usage
 To run the development server, use the following command:
 npm run dev
 
@@ -35,43 +35,41 @@ To start Storybook for component development, run:
 npm run storybook
 
 
-Components
+## Components
 
 This design system includes the following components:
 
-Alert: Displays alert messages with different variants (info, success, warning, error).
+- **Alert:** Displays alert messages with different variants (info, success, warning, error).
+- **Input:** A customizable input field with label and error handling.
+- **Select:** A dropdown select component with options and support for disabled states.
+- **Toast:** A notification component that can display messages temporarily.
+- **Typography:** A flexible typography component for various text styles.
 
-Input: A customizable input field with label and error handling.
+## Scripts
 
-Select: A dropdown select component with options and support for disabled states.
+The following scripts are available in the `package.json`:
 
-Toast: A notification component that can display messages temporarily.
+- `dev`: Starts the Vite development server.
+- `build`: Compiles the TypeScript files and builds the project.
+- `lint`: Runs ESLint to check for code quality issues.
+- `preview`: Previews the production build.
+- `storybook`: Starts the Storybook development server.
+- `build-storybook`: Builds the Storybook for production.
 
-Typography: A flexible typography component for various text styles.
+## Configuration
 
+### Vite Configuration
 
+The Vite configuration is located in `vite.config.ts`. It includes plugins for React and font handling.
 
-Scripts
-The following scripts are available in the package.json:
+### Tailwind CSS Configuration
 
-dev: Starts the Vite development server.
+The Tailwind CSS configuration is in `tailwind.config.js`, where you can customize themes and variants.
 
-build: Compiles the TypeScript files and builds the project.
+### ESLint and Prettier
 
-lint: Runs ESLint to check for code quality issues.
+ESLint and Prettier configurations are provided to maintain code quality and formatting. You can find them in `.eslintrc.cjs` and `.prettierrc.cjs`.
 
-preview: Previews the production build.
+## License
 
-storybook: Starts the Storybook development server.
-
-build-storybook: Builds the Storybook for production.
-
-Configuration
-Vite Configuration
-The Vite configuration is located in vite.config.ts. It includes plugins for React and font handling.
-
-Tailwind CSS Configuration
-The Tailwind CSS configuration is in tailwind.config.js, where you can customize themes and variants.
-
-ESLint and Prettier
-ESLint and Prettier configurations are provided to maintain code quality and formatting. You can find them in .eslintrc.cjs and .prettierrc.cjs.
+This project is licensed under the MIT License. See the LICENSE file for details.
